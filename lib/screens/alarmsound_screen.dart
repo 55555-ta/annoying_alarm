@@ -60,12 +60,18 @@ class _AlarmsoundScreenState extends State<AlarmsoundScreen> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
+            icon: Icon(
+              Icons.cancel,
+              size: 40.0,
+            ),
+            label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
+            icon: Icon(
+              Icons.check_box,
+              size: 40.0,
+            ),
+            label: '',
           ),
         ],
         // 선택된 아이템 색상 설정
@@ -81,6 +87,7 @@ class _AlarmsoundScreenState extends State<AlarmsoundScreen> {
             _selectedIndex = index;
           });
         },
+        type: BottomNavigationBarType.fixed,
       ),
     );
   }

@@ -15,12 +15,12 @@ class _BellSoundContainerState extends State<BellSoundContainer> {
   Widget build(BuildContext context) {
     const int itemCount = 5;
     return AnimatedOpacity(
-      duration: const Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 200),
       opacity: widget.isVisible ? 1.0 : 0.0,
       child: Visibility(
         visible: widget.isVisible,
         child: AnimatedContainer(
-          duration: const Duration(milliseconds: 500),
+          duration: const Duration(milliseconds: 200),
           height: widget.isVisible ? 325.0 : 0,
           width: 392.7,
           decoration: const BoxDecoration(
