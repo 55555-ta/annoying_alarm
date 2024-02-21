@@ -87,7 +87,6 @@ class _AlarmsoundScreenState extends State<AlarmsoundScreen> {
             _selectedIndex = index;
           });
         },
-        type: BottomNavigationBarType.fixed,
       ),
     );
   }
