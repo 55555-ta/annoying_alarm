@@ -1,4 +1,4 @@
-import 'package:annoying_alarm/widget/%08mainScreen_alarmBox.dart';
+import 'package:annoying_alarm/widget/alarm_box.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -83,6 +83,11 @@ class HomeScreen extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
+          const AlarmBox(),
+                    const SizedBox(
+            height: 10,
+          ),
+          const AlarmBox(),
         ],
       ),
     );
