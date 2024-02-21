@@ -1,3 +1,4 @@
+import 'package:annoying_alarm/widgets/alarmsound_footer.dart';
 import 'package:flutter/material.dart';
 import 'package:annoying_alarm/widgets/alarmsound_tiltebox.dart';
 import 'package:annoying_alarm/widgets/alarmsound_button.dart';
@@ -13,6 +14,14 @@ class AlarmsoundScreen extends StatefulWidget {
 class _AlarmsoundScreenState extends State<AlarmsoundScreen> {
   bool _isBellSoundVisible = false;
   bool _isChecked = false;
+    int _selectedIndex = 0; // 추가
+
+  void _onItemTapped(int index) { // 추가
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +62,28 @@ class _AlarmsoundScreenState extends State<AlarmsoundScreen> {
           height: 35,
         ),
         BellSoundContainer(isVisible: _isBellSoundVisible),
+        const alarmsound_footer(),
       ],
+    ),
+   bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.business),
+            label: 'Business',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.school),
+            label: 'School',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.amber[800],
+        onTap: _onItemTapped,
+      ),
     );
   }
 }
