@@ -1,3 +1,4 @@
+import 'package:annoying_alarm/widget/%08mainScreen_alarmBox.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -6,7 +7,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 150, horizontal: 50),
+      padding: const EdgeInsets.symmetric(vertical: 150, horizontal: 30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -78,47 +79,9 @@ class HomeScreen extends StatelessWidget {
               )
             ],
           ),
-          Container(
-            decoration: BoxDecoration(
-              color: const Color(0xffc8e3f7),
-              borderRadius: BorderRadius.circular(30),
-            ),
-            width: 650,
-            height: 110,
-            child: const Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  '알람 이름',
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-          ),
+          const AlarmBox(),
           const SizedBox(
             height: 10,
-          ),
-          Container(
-            decoration: BoxDecoration(
-              color: const Color(0xffc8e3f7),
-              borderRadius: BorderRadius.circular(30),
-            ),
-            width: 650,
-            height: 110,
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          Container(
-            decoration: BoxDecoration(
-              color: const Color(0xffc8e3f7),
-              borderRadius: BorderRadius.circular(30),
-            ),
-            width: 650,
-            height: 110,
           ),
         ],
       ),
