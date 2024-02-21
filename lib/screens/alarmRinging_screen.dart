@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:alarm/alarm.dart';
 
 class AlarmRingingScreen extends StatelessWidget {
-  const AlarmRingingScreen({super.key});
+  final AlarmSettings alarmSettings;
+
+  AlarmRingingScreen({super.key, required this.alarmSettings});
+
+  final now = DateTime.now();
 
   @override
   Widget build(BuildContext context) {
@@ -14,38 +18,46 @@ class AlarmRingingScreen extends StatelessWidget {
           children: [
             Column(
               children: [
-                const Text(
-                  "09:03",
-                  style: TextStyle(
+                Text(
+                  "${now.hour.toString().padLeft(2, '0')}:${now.minute.toString().padLeft(2, '0')}",
+                  style: const TextStyle(
                     fontSize: 100,
                     fontWeight: FontWeight.bold,
                     height: 1.0,
+                    color: Colors.black,
+                    decoration: TextDecoration.none,
                   ),
                 ),
-                const Text(
-                  "2월 7일 수요일",
-                  style: TextStyle(
+                Text(
+                  "${now.month}월 ${now.day}일 ${getWeekdayString(now.weekday)}",
+                  style: const TextStyle(
                     fontSize: 20,
+                    color: Colors.black,
+                    decoration: TextDecoration.none,
                   ),
                 ),
                 const SizedBox(
                   height: 30,
                 ),
-                const Row(
+                Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.only(top: 5),
                       child: Icon(
                         Icons.watch_later_outlined,
                         size: 30,
                       ),
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Text(
-                      "출근날",
-                      style: TextStyle(fontSize: 30),
+                      alarmSettings.notificationTitle,
+                      style: const TextStyle(
+                        fontSize: 30,
+                        color: Colors.black,
+                        decoration: TextDecoration.none,
+                      ),
                     ),
                   ],
                 ),
@@ -55,7 +67,10 @@ class AlarmRingingScreen extends StatelessWidget {
                       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                       shape: const CircleBorder(),
                       padding: const EdgeInsets.all(20)),
-                  onPressed: () {},
+                  onPressed: () {
+                    Alarm.stop(alarmSettings.id)
+                        .then((_) => Navigator.pop(context));
+                  },
                   child: const Text(
                     "X",
                     style: TextStyle(
@@ -84,5 +99,24 @@ class AlarmRingingScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  getWeekdayString(int weekday) {
+    switch (weekday) {
+      case 1:
+        return '월요일';
+      case 2:
+        return '화요일';
+      case 3:
+        return '수요일';
+      case 4:
+        return '목요일';
+      case 5:
+        return '금요일';
+      case 6:
+        return '토요일';
+      default:
+        return '일요일';
+    }
   }
 }
