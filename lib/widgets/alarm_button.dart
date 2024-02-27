@@ -12,7 +12,7 @@ class _AlarmButtonState extends State<AlarmButton> {
 
   @override
   Widget build(BuildContext context) {
-    return  Switch(
+    return Switch(
               trackOutlineColor: MaterialStateProperty.all(Colors.transparent),
               activeColor: const Color(0xffC8E3F7),
               activeTrackColor: Colors.white,
