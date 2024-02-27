@@ -1,3 +1,5 @@
+import 'package:annoying_alarm/widgets/alarm_button.dart';
+import 'package:annoying_alarm/widgets/alarmsound_button.dart';
 import 'package:flutter/material.dart';
 
 class AlarmBox extends StatelessWidget {
@@ -40,7 +42,7 @@ class AlarmBox extends StatelessWidget {
                           top: 15,
                         ),
                         child: Text('일 월 화 수 목 금 토 일',),
-                      )
+                      ),
                     ],
                   ),
                   SizedBox(
@@ -60,13 +62,17 @@ class AlarmBox extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Text(
-                        '8:00',
-                        style: TextStyle(
-                          fontSize: 35,
-                          fontWeight: FontWeight.bold,
+                      Padding(
+                        padding: EdgeInsets.only(right: 130.0),
+                        child: Text(
+                          '8:00',
+                          style: TextStyle(
+                            fontSize: 35,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
+                      AlarmButton()     
                     ],
                   ),
                 ],
