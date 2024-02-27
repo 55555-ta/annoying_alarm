@@ -27,11 +27,11 @@ class _AlarmMainBoxState extends State<AlarmMainBox> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(
+                  padding: const EdgeInsets.only(
                     top: 15,
                   ),
                   child: Text(
@@ -39,15 +39,19 @@ class _AlarmMainBoxState extends State<AlarmMainBox> {
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
+                      color:  _isChecked ? const Color(0xff000000) : const Color(0xff939393),
                     ),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(
+                  padding: const EdgeInsets.only(
                     top: 15,
                   ),
                   child: Text(
                     '일 월 화 수 목 금 토 일',
+                    style: TextStyle(
+                      color: _isChecked ? const Color(0xff000000) : const Color(0xff939393),
+                    ),
                   ),
                 ),
               ],
@@ -57,8 +61,8 @@ class _AlarmMainBoxState extends State<AlarmMainBox> {
             ),
             Row(
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(
+                 Padding(
+                  padding: const EdgeInsets.only(
                     top: 10,
                   ),
                   child: Text(
@@ -66,23 +70,25 @@ class _AlarmMainBoxState extends State<AlarmMainBox> {
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
+                       color:  _isChecked ? const Color(0xff000000) : const Color(0xff939393),
                     ),
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(right: 130.0),
+                Padding(
+                  padding: const EdgeInsets.only(right: 130.0),
                   child: Text(
                     '8:00',
                     style: TextStyle(
                       fontSize: 35,
                       fontWeight: FontWeight.bold,
+                      color:  _isChecked ? const Color(0xff000000) : const Color(0xff939393),
                     ),
                   ),
                 ),
                 Switch(
                   trackOutlineColor:
                       MaterialStateProperty.all(Colors.transparent),
-                  activeColor: const Color(0xffC8E3F7),
+                  activeColor: const Color(0xff008FE0),
                   activeTrackColor: Colors.white,
                   inactiveTrackColor: Colors.white,
                   inactiveThumbColor: const Color(0xffBABABA),
