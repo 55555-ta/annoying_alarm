@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class AlarmButtonMain extends StatefulWidget {
-  const AlarmButtonMain({Key? key}) : super(key: key);
+class AlarmMainBox extends StatefulWidget {
+  const AlarmMainBox({Key? key}) : super(key: key);
 
   @override
-  State<AlarmButtonMain> createState() => _AlarmButtonMainState();
+  State<AlarmMainBox> createState() => _AlarmMainBoxState();
 }
 
-class _AlarmButtonMainState extends State<AlarmButtonMain> {
+class _AlarmMainBoxState extends State<AlarmMainBox> {
   bool _isChecked = false;
 
   @override
