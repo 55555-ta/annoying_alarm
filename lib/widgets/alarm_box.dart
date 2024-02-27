@@ -1,5 +1,4 @@
 import 'package:annoying_alarm/widgets/alarm_button.dart';
-import 'package:annoying_alarm/widgets/alarmsound_button.dart';
 import 'package:flutter/material.dart';
 
 class AlarmBox extends StatelessWidget {

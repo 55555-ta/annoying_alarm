@@ -22,7 +22,7 @@ class _AlarmMainBoxState extends State<AlarmMainBox> {
       child: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: 30,
-          vertical: 5,
+          vertical: 3,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,7 +39,9 @@ class _AlarmMainBoxState extends State<AlarmMainBox> {
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
-                      color:  _isChecked ? const Color(0xff000000) : const Color(0xff939393),
+                      color: _isChecked
+                          ? const Color(0xff000000)
+                          : const Color(0xff939393),
                     ),
                   ),
                 ),
@@ -50,18 +52,33 @@ class _AlarmMainBoxState extends State<AlarmMainBox> {
                   child: Text(
                     '일 월 화 수 목 금 토 일',
                     style: TextStyle(
-                      color: _isChecked ? const Color(0xff000000) : const Color(0xff939393),
+                      color: _isChecked
+                          ? const Color(0xff000000)
+                          : const Color(0xff939393),
                     ),
                   ),
                 ),
               ],
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  '진동 / 앵그리',
+                  style: TextStyle(
+                    color: _isChecked
+                        ? const Color(0xff000000)
+                        : const Color(0xff939393),
+                  ),
+                ),
+              ],
+            ),
             const SizedBox(
-              height: 20,
+              height: 5,
             ),
             Row(
               children: [
-                 Padding(
+                Padding(
                   padding: const EdgeInsets.only(
                     top: 10,
                   ),
@@ -70,7 +87,9 @@ class _AlarmMainBoxState extends State<AlarmMainBox> {
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                       color:  _isChecked ? const Color(0xff000000) : const Color(0xff939393),
+                      color: _isChecked
+                          ? const Color(0xff000000)
+                          : const Color(0xff939393),
                     ),
                   ),
                 ),
@@ -81,7 +100,9 @@ class _AlarmMainBoxState extends State<AlarmMainBox> {
                     style: TextStyle(
                       fontSize: 35,
                       fontWeight: FontWeight.bold,
-                      color:  _isChecked ? const Color(0xff000000) : const Color(0xff939393),
+                      color: _isChecked
+                          ? const Color(0xff000000)
+                          : const Color(0xff939393),
                     ),
                   ),
                 ),
