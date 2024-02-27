@@ -1,9 +1,25 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+   <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+   <uses-permission android:name="android.permission.WAKE_LOCK"/>
+   <uses-permission android:name="android.permission.VIBRATE"/>
+   <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT"/>
+   <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+   <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+   <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+   <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"/>
+   <uses-permission android:name="android.permission.USE_EXACT_ALARM"/>
+   <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"
+                    android:maxSdkVersion="32" />
     <application
         android:label="annoying_alarm"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <!-- 알람이 종료하거나 기기가 재부팅 될때 필수 -->
+        <service android:name="com.gdelataillade.alarm.services.NotificationOnKillService" />
         <activity
+            android:showWhenLocked="true"
+            android:turnScreenOn="true"
             android:name=".MainActivity"
             android:exported="true"
             android:launchMode="singleTop"
