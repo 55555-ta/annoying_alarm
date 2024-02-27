@@ -12,6 +12,7 @@ class AlarmsoundScreen extends StatefulWidget {
 
 class _AlarmsoundScreenState extends State<AlarmsoundScreen> {
   bool _isBellSoundVisible = false;
+  int _selectedBellIndex = 0; // 이 상태 변수를 추가합니다
   bool _isChecked = false;
   int _selectedIndex = 0;
 
@@ -49,12 +50,19 @@ class _AlarmsoundScreenState extends State<AlarmsoundScreen> {
                 _isBellSoundVisible = !_isBellSoundVisible;
               });
             },
-            child: alarmsound_tiltebox(_isChecked),
+            child: alarmsound_tiltebox(_isChecked, _selectedBellIndex),
           ),
           const SizedBox(
             height: 35,
           ),
-          BellSoundContainer(isVisible: _isBellSoundVisible),
+          BellSoundContainer(
+            isVisible: _isBellSoundVisible,
+            onItemTap: (index) {
+              setState(() {
+                _selectedBellIndex = index;
+              });
+            },
+          ),
         ],
       ),
       bottomNavigationBar: SizedBox(
