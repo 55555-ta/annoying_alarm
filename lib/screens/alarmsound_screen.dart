@@ -12,6 +12,7 @@ class AlarmsoundScreen extends StatefulWidget {
 
 class _AlarmsoundScreenState extends State<AlarmsoundScreen> {
   bool _isBellSoundVisible = false;
+  int _selectedBellIndex = 0; // 이 상태 변수를 추가합니다
   bool _isChecked = false;
   int _selectedIndex = 0;
 
@@ -49,44 +50,53 @@ class _AlarmsoundScreenState extends State<AlarmsoundScreen> {
                 _isBellSoundVisible = !_isBellSoundVisible;
               });
             },
-            child: alarmsound_tiltebox(_isChecked),
+            child: alarmsound_tiltebox(_isChecked, _selectedBellIndex),
           ),
           const SizedBox(
             height: 35,
           ),
-          BellSoundContainer(isVisible: _isBellSoundVisible),
+          BellSoundContainer(
+            isVisible: _isBellSoundVisible,
+            onItemTap: (index) {
+              setState(() {
+                _selectedBellIndex = index;
+              });
+            },
+          ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.cancel,
-              size: 40.0,
+      bottomNavigationBar: SizedBox(
+        height: 90,
+        child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.cancel,
+                size: 40.0,
+              ),
+              label: '닫기',
             ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.check_box,
-              size: 40.0,
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.check_box,
+                size: 40.0,
+              ),
+              label: '체크',
             ),
-            label: '',
-          ),
-        ],
-        // 선택된 아이템 색상 설정
-        unselectedItemColor: const Color(0xffC8E3F7),
-        selectedItemColor: Colors.white,
-        backgroundColor: const Color(0xff008FE0),
-        // 현재 선택된 인덱스
-        currentIndex: _selectedIndex,
-        // 아이템을 클릭했을 때 호출되는 콜백 함수
-        onTap: (index) {
-          // TODO: 아이템을 클릭했을 때의 동작 구현
-          setState(() {
-            _selectedIndex = index;
-          });
-        },
+          ],
+          unselectedItemColor: const Color(0xffC8E3F7),
+          selectedItemColor: Colors.white,
+          backgroundColor: const Color(0xff008FE0),
+          currentIndex: _selectedIndex,
+          // 아이템을 클릭했을 때 호출되는 콜백 함수
+          onTap: (index) {
+            // TODO: 아이템을 클릭했을 때의 동작 구현
+            setState(() {
+              _selectedIndex = index;
+            });
+          },
+        ),
       ),
     );
   }
