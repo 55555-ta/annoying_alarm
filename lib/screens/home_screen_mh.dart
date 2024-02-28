@@ -7,7 +7,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 150, horizontal: 30),
+      padding: const EdgeInsets.symmetric(vertical: 130, horizontal: 30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -76,18 +76,25 @@ class HomeScreen extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-              )
+              ),
             ],
           ),
-          const AlarmMainBox(),
-          const SizedBox(
-            height: 10,
+          const Column(
+            children: [
+              AlarmMainBox(),
+              SizedBox(
+                height: 10,
+              ),
+              AlarmMainBox(),
+              SizedBox(
+                height: 10,
+              ),
+              AlarmMainBox(),
+              SizedBox(
+                height: 10,
+              ),
+            ],
           ),
-          const AlarmMainBox(),
-          const SizedBox(
-            height: 10,
-          ),
-          const AlarmMainBox(),
         ],
       ),
     );
