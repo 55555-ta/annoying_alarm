@@ -7,97 +7,111 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('어노잉 알람', style: TextStyle(fontWeight: FontWeight.bold),),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 30),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  '2월 10일 (목) 오전 7:30',
-                  style: TextStyle(
-                    color: Color(0xff5e5e5e),
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 2), // Add some spacing between the rows
-            const Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  '14시간 55분후에',
-                  style: TextStyle(
-                    fontSize: 38,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-            const Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  '알람이 울립니다.',
-                  style: TextStyle(
-                    fontSize: 33,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    '편집',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    '+',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SingleChildScrollView(
-              child: Column(
+      // appBar: AppBar(
+      // title: const Text('어노잉 알람', style: TextStyle(fontWeight: FontWeight.bold),),
+      // ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 130, horizontal: 30),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  AlarmMainBox(),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  AlarmMainBox(),
-                  SizedBox(
-                    height: 10,
+                  Text(
+                    '2월 10일 (목) 오전 7:30',
+                    style: TextStyle(
+                      color: Color(0xff5e5e5e),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ],
               ),
-            ),
-          ],
+              const SizedBox(height: 2), // Add some spacing between the rows
+              const Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '14시간 55분후에',
+                    style: TextStyle(
+                      fontSize: 38,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+              const Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '알람이 울립니다.',
+                    style: TextStyle(
+                      fontSize: 33,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      '편집',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      '+',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SingleChildScrollView(
+                child: Column(
+                  children: [
+                    AlarmMainBox(),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    AlarmMainBox(),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    AlarmMainBox(),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    AlarmMainBox(),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    AlarmMainBox(),
+                    SizedBox(
+                      height: 10,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -115,7 +129,7 @@ class HomeScreen extends StatelessWidget {
             icon: Icon(Icons.local_fire_department),
             label: '앵그리',
           ),
-           BottomNavigationBarItem(
+          BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             label: '환경설정',
           ),
