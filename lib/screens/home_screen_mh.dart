@@ -7,9 +7,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
+      appBar: AppBar(
       // title: const Text('어노잉 알람', style: TextStyle(fontWeight: FontWeight.bold),),
-      // ),
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 130, horizontal: 30),
