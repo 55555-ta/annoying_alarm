@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vibration/vibration.dart';
 
 class AlarmsoundButton extends StatefulWidget {
   const AlarmsoundButton({Key? key}) : super(key: key);
@@ -44,11 +45,21 @@ class _AlarmsoundButtonState extends State<AlarmsoundButton> {
               activeTrackColor: Colors.white,
               inactiveTrackColor: Colors.white,
               inactiveThumbColor: const Color(0xffBABABA),
+              thumbColor: MaterialStateProperty.resolveWith((states) {
+                if (_isChecked) {
+                  return const Color(0xffC8E3F7); // 파란색
+                }
+                return const Color(0xffBABABA); // 회색
+              }),
               value: _isChecked,
               onChanged: (value) {
                 setState(() {
                   _isChecked = value;
                 });
+                if (_isChecked) {
+                  // 스위치가 켜진 경우 진동을 발생시킵니다.
+                  Vibration.vibrate(duration: 200); // 진동 시간 설정 (밀리초)
+                }
               },
             ),
           ],
