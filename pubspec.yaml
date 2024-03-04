@@ -36,7 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   vibration: ^1.8.4
   permission_handler: ^11.3.0
-  alarm: ^3.0.12
+  # alarm: ^3.0.12
 
 dev_dependencies:
   flutter_test:
