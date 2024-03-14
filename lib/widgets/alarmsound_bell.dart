@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class BellSoundContainer extends StatefulWidget {
   final bool isVisible;
+  final Function(int)? onItemTap; // 콜백 함수
 
-  const BellSoundContainer({Key? key, required this.isVisible})
+  const BellSoundContainer({Key? key, required this.isVisible, this.onItemTap})
       : super(key: key);
-
   @override
   _BellSoundContainerState createState() => _BellSoundContainerState();
 }
@@ -56,7 +56,11 @@ class _BellSoundContainerState extends State<BellSoundContainer> {
                     itemBuilder: (context, index) {
                       return ListTile(
                         title: Text('벚꽃엔딩 ${index + 1}'),
-                        // 필요에 따라 추가적인 위젯을 구성
+                        onTap: () {
+                          if (widget.onItemTap != null) {
+                            widget.onItemTap!(index);
+                          }
+                        },
                       );
                     },
                   ),
