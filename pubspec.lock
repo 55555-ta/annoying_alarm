@@ -75,6 +75,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_time_picker_spinner:
+    dependency: "direct main"
+    description:
+      name: flutter_time_picker_spinner
+      sha256: "95600709910ad0cd5fcaec6c371dbe2e81a78989a9ee8c08a356433e2ccff041"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   lints:
     dependency: transitive
     description:
@@ -168,6 +176,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.6.1"
+  time_picker_spinner:
+    dependency: "direct main"
+    description:
+      name: time_picker_spinner
+      sha256: "4e6c2615ace21119262be4cc92f50b379e3db6fc91679371e768ed84240aa700"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1"
   vector_math:
     dependency: transitive
     description:
@@ -186,3 +202,4 @@ packages:
     version: "0.3.0"
 sdks:
   dart: ">=3.2.4 <4.0.0"
+  flutter: ">=1.17.0"
